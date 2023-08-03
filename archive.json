@@ -1,0 +1,148 @@
+{
+  "magic": "E!vIA5L86J2I",
+  "timestamp": "2023-08-03T00:55:39.417824+00:00",
+  "repo": "trustoverip/tswg-said-specification",
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "color": "d73a4a"
+    },
+    {
+      "name": "documentation",
+      "description": "Improvements or additions to documentation",
+      "color": "0075ca"
+    },
+    {
+      "name": "duplicate",
+      "description": "This issue or pull request already exists",
+      "color": "cfd3d7"
+    },
+    {
+      "name": "enhancement",
+      "description": "New feature or request",
+      "color": "a2eeef"
+    },
+    {
+      "name": "good first issue",
+      "description": "Good for newcomers",
+      "color": "7057ff"
+    },
+    {
+      "name": "help wanted",
+      "description": "Extra attention is needed",
+      "color": "008672"
+    },
+    {
+      "name": "invalid",
+      "description": "This doesn't seem right",
+      "color": "e4e669"
+    },
+    {
+      "name": "question",
+      "description": "Further information is requested",
+      "color": "d876e3"
+    },
+    {
+      "name": "wontfix",
+      "description": "This will not be worked on",
+      "color": "ffffff"
+    }
+  ],
+  "issues": [
+    {
+      "number": 2,
+      "id": "I_kwDOKAh7W85tFI4A",
+      "title": "Fix references to WoT specs and update to ToIP",
+      "url": "https://github.com/trustoverip/tswg-said-specification/issues/2",
+      "state": "OPEN",
+      "author": "m00sey",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-07-31T21:32:31Z",
+      "updatedAt": "2023-07-31T21:32:31Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 3,
+      "id": "I_kwDOKAh7W85tKxLM",
+      "title": "SAID field labels and values",
+      "url": "https://github.com/trustoverip/tswg-said-specification/issues/3",
+      "state": "OPEN",
+      "author": "m00sey",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Placeholder:\r\n\r\nAdd appendix with application-specific variants that use different labels for SAID field such as $id from JSON Schema and use SAIDs embedded in namespace URN (DID) or URL for example such as JSON Schema in ACDC.\r\n\r\nMigrated from https://github.com/WebOfTrust/ietf-said/issues/17",
+      "createdAt": "2023-08-01T15:32:58Z",
+      "updatedAt": "2023-08-01T15:32:58Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 4,
+      "id": "I_kwDOKAh7W85tKyz8",
+      "title": "Show steps for verifying a SAID",
+      "url": "https://github.com/trustoverip/tswg-said-specification/issues/4",
+      "state": "OPEN",
+      "author": "m00sey",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Migrated from https://github.com/WebOfTrust/ietf-said/issues/19",
+      "createdAt": "2023-08-01T15:37:08Z",
+      "updatedAt": "2023-08-01T15:37:08Z",
+      "closedAt": null,
+      "comments": []
+    },
+    {
+      "number": 5,
+      "id": "I_kwDOKAh7W85tMcZZ",
+      "title": "Document integration with other forms of verification ",
+      "url": "https://github.com/trustoverip/tswg-said-specification/issues/5",
+      "state": "OPEN",
+      "author": "m00sey",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "https://github.com/WebOfTrust/ietf-said/issues/22",
+      "createdAt": "2023-08-01T20:24:52Z",
+      "updatedAt": "2023-08-01T20:24:52Z",
+      "closedAt": null,
+      "comments": []
+    }
+  ],
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOKAh7W85W1GdG",
+      "title": "adds migration note",
+      "url": "https://github.com/trustoverip/tswg-said-specification/pull/1",
+      "state": "MERGED",
+      "author": "m00sey",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Add a reference to the previous WebOfTrust repository.",
+      "createdAt": "2023-07-31T17:57:58Z",
+      "updatedAt": "2023-08-01T20:03:45Z",
+      "baseRepository": "trustoverip/tswg-said-specification",
+      "baseRefName": "main",
+      "baseRefOid": "0b000e4292b88f478d00b583a1d99e2f670c31ab",
+      "headRepository": "m00sey/tswg-said-specification",
+      "headRefName": "main",
+      "headRefOid": "2bf94b9d807eb2b839beea52e3c972b25291ef19",
+      "closedAt": "2023-08-01T20:03:45Z",
+      "mergedAt": "2023-08-01T20:03:45Z",
+      "mergedBy": "m00sey",
+      "mergeCommit": {
+        "oid": "b476d416df878b3f582543ccc976940471c4bb47"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
+}
