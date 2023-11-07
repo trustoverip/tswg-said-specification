@@ -10,24 +10,24 @@
        A  SAID  (Self-Addressing IDentifier) is a special type of content-addressable identifier based on encoded cryptographic digest that is self-referential. The  SAID  derivation protocol defined herein enables verification that a given  SAID  is uniquely cryptographically bound to a serialization that includes the  SAID  as a field in that serialization. Embedding a  SAID  as a field in the associated serialization indicates a preferred content-addressable identifier for that serialization that facilitates greater interoperability, reduced ambiguity, and enhanced security when reasoning about the serialization. Moreover, given sufficient cryptographic strength, a cryptographic commitment such as a signature, digest, or another  SAID , to a given  SAID  is essentially equivalent to a commitment to its associated serialization. Any change to the serialization invalidates its  SAID  thereby ensuring secure immutability evident reasoning with  SAIDs  about serializations or equivalently their  SAIDs . Thus  SAIDs  better facilitate immutably referenced data serializations for applications such as Verifiable Credentials or Ricardian Contracts. 
        SAIDs  are encoded with  CESR  (Composable Event Streaming Representation)   which includes a pre-pended derivation code that encodes the cryptographic suite or algorithm used to generate the digest. A  CESR  primitive's primary expression (alone or in combination ) is textual using Base64 URL-safe characters.  CESR  primitives may be round-tripped (alone or in combination) to a compact binary representation without loss. The  CESR  derivation code enables cryptographic digest algorithm agility in systems that use  SAIDs  as content addresses. Each serialization may use a different cryptographic digest algorithm as indicated by its derivation code. This provides interoperable future proofing.  CESR  was developed for the   protocol. 
     " name="description">
-<meta content="xml2rfc 3.17.4" name="generator">
+<meta content="xml2rfc 3.18.2" name="generator">
 <meta content="Internet-Draft" name="keyword">
 <meta content="draft-ssmith-said-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.17.4
-    Python 3.11.4
+  xml2rfc 3.18.2
+    Python 3.11.6
     ConfigArgParse 1.5.3
     google-i18n-address 3.1.0
     intervaltree 3.1.0
     Jinja2 3.1.2
     lxml 4.9.3
-    platformdirs 3.9.1
+    platformdirs 3.11.0
     pycountry 22.3.5
     PyYAML 6.0
     requests 2.31.0
     setuptools 67.7.2
     six 1.16.0
-    wcwidth 0.2.6
+    wcwidth 0.2.9
 -->
 <link href="draft-ssmith-said.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -650,7 +650,7 @@ sub, sup {
 }
 #toc nav li {
   line-height: 1.3em;
-  margin: 0.75em 0;
+  margin: 2px 0;
   padding-left: 1.2em;
   text-indent: -1.2em;
 }
@@ -743,7 +743,7 @@ hr.addr {
     z-index: 2;
     top: 0;
     right: 0;
-    padding: 0;
+    padding: 1px 0 0 0;
     margin: 0;
     border-bottom: 1px solid #ccc;
     opacity: 0.6;
@@ -867,16 +867,13 @@ hr.addr {
     border-top: none;
     padding-top: 0;
   }
-  figure, pre {
+  figure, pre, .vcard {
     page-break-inside: avoid;
-  }
-  figure {
-    overflow: scroll;
   }
   h1, h2, h3, h4, h5, h6 {
     page-break-after: avoid;
   }
-  h2+*, h3+*, h4+*, h5+*, h6+* {
+  :is(h2, h3, h4, h5, h6)+*, dd {
     page-break-before: avoid;
   }
   pre {
@@ -889,6 +886,9 @@ hr.addr {
   }
   td {
     border-top: 1px solid #ddd;
+  }
+  .toplink {
+    display: none;
   }
 }
 
@@ -990,28 +990,6 @@ address div.right {
   text-align: right;
 }
 
-/* Give the table caption label the same styling as the figcaption */
-
-@media print {
-  .toplink {
-    display: none;
-  }
-
-  /* avoid overwriting the top border line with the ToC header */
-  #toc {
-    padding-top: 1px;
-  }
-
-  /* Avoid page breaks inside dl and author address entries */
-  dd {
-    page-break-before: avoid;
-  }
-  .vcard {
-    page-break-inside: avoid;
-  }
-
-}
-
 /* Dark mode. */
 @media (prefers-color-scheme: dark) {
 :root {
@@ -1048,11 +1026,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">SAID</td>
-<td class="right">July 2023</td>
+<td class="right">November 2023</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Smith</td>
-<td class="center">Expires 28 January 2024</td>
+<td class="center">Expires 10 May 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1065,12 +1043,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-ssmith-said-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-07-27" class="published">27 July 2023</time>
+<time datetime="2023-11-07" class="published">7 November 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-01-28">28 January 2024</time></dd>
+<dd class="expires"><time datetime="2024-05-10">10 May 2024</time></dd>
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
@@ -1113,7 +1091,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 28 January 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 10 May 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1225,15 +1203,20 @@ svg :is([fill="white"], [fill^="#fff"]) {
       </h2>
 <p id="section-2-1">The <em>self-addressing identifier</em> (<code>SAID</code>) verification protocol is as follows:<a href="#section-2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-2-2.1">Make a copy of the embedded <code>CESR</code> <span>[<a href="#CESR" class="cite xref">CESR</a>]</span> encoded <code>SAID</code> string included in the serialization.<a href="#section-2-2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-2-2.1">
+          <p id="section-2-2.1.1">Make a copy of the embedded <code>CESR</code> <span>[<a href="#CESR" class="cite xref">CESR</a>]</span> encoded <code>SAID</code> string included in the serialization.<a href="#section-2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-2.2">replace the <code>SAID</code> field value in the serialization with a dummy string of the same length. The dummy character is <code>#</code>, that is, ASCII 35 decimal (23 hex).<a href="#section-2-2.2" class="pilcrow">¶</a>
+        <li class="normal" id="section-2-2.2">
+          <p id="section-2-2.2.1">replace the <code>SAID</code> field value in the serialization with a dummy string of the same length. The dummy character is <code>#</code>, that is, ASCII 35 decimal (23 hex).<a href="#section-2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-2.3">Compute the digest of the serialization that includes the dummy value for the <code>SAID</code> field. Use the digest algorithm specified by the <code>CESR</code> <span>[<a href="#CESR" class="cite xref">CESR</a>]</span> derivation code of the copied <code>SAID</code>.<a href="#section-2-2.3" class="pilcrow">¶</a>
+        <li class="normal" id="section-2-2.3">
+          <p id="section-2-2.3.1">Compute the digest of the serialization that includes the dummy value for the <code>SAID</code> field. Use the digest algorithm specified by the <code>CESR</code> <span>[<a href="#CESR" class="cite xref">CESR</a>]</span> derivation code of the copied <code>SAID</code>.<a href="#section-2-2.3.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-2.4">Encode the computed digest with CESR <span>[<a href="#CESR" class="cite xref">CESR</a>]</span> to create the final derived and encoded SAID of the same total length as the dummy string and the copied embedded <code>SAID</code>.<a href="#section-2-2.4" class="pilcrow">¶</a>
+        <li class="normal" id="section-2-2.4">
+          <p id="section-2-2.4.1">Encode the computed digest with CESR <span>[<a href="#CESR" class="cite xref">CESR</a>]</span> to create the final derived and encoded SAID of the same total length as the dummy string and the copied embedded <code>SAID</code>.<a href="#section-2-2.4.1" class="pilcrow">¶</a></p>
 </li>
-        <li class="normal" id="section-2-2.5">Compare the copied <code>SAID</code> with the recomputed <code>SAID</code>. If they are identical then the verification is successful; otherwise unsuccessful.<a href="#section-2-2.5" class="pilcrow">¶</a>
+        <li class="normal" id="section-2-2.5">
+          <p id="section-2-2.5.1">Compare the copied <code>SAID</code> with the recomputed <code>SAID</code>. If they are identical then the verification is successful; otherwise unsuccessful.<a href="#section-2-2.5.1" class="pilcrow">¶</a></p>
 </li>
       </ul>
 <div id="example-computation">
@@ -1453,6 +1436,7 @@ appear in all capitals, as shown here.<a href="#section-5-1" class="pilcrow">¶<
       <h2 id="name-references">
 <a href="#section-8" class="section-number selfRef">8. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
+<div id="sec-normative-references">
 <section id="section-8.1">
         <h3 id="name-normative-references">
 <a href="#section-8.1" class="section-number selfRef">8.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
@@ -1472,6 +1456,8 @@ appear in all capitals, as shown here.<a href="#section-5-1" class="pilcrow">¶<
 <dd class="break"></dd>
 </dl>
 </section>
+</div>
+<div id="sec-informative-references">
 <section id="section-8.2">
         <h3 id="name-informative-references">
 <a href="#section-8.2" class="section-number selfRef">8.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
@@ -1483,6 +1469,7 @@ appear in all capitals, as shown here.<a href="#section-5-1" class="pilcrow">¶<
 <dd class="break"></dd>
 </dl>
 </section>
+</div>
 </section>
 <div id="acknowledgments">
 <section id="appendix-A">
